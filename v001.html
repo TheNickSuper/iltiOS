@@ -83,14 +83,8 @@ a.innerHTML = "";
 setTimeout(workA, 1000);
 }
 function workA(){
-e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+updateTerminal()
 a.innerHTML = e;
-b = document.getElementById("txtcmnd")
-c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
 d = b.value;
 updateCommandValue();
 }
@@ -101,6 +95,7 @@ function workB(){
 updateCommandValue();
 if(d == "help"){
 a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>" + e;
+updateTerminal()
 screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>";
 }
 if(d == "off"){
@@ -111,9 +106,11 @@ a = " ";
 if(d == "cs"){
 screenData = " ";
 a.innerHTML = e;
+  updateTerminal()
 }
 if(d == "ver"){
 a.innerHTML = screenData + "<br>0.0.1<br>" + e;
+  updateTerminal()
   screenData = screenData + "<br>0.0.1<br>";
 }
 updateCommandValue();
@@ -123,6 +120,15 @@ setTimeout(workB, 5000);
 }
 function jfg(){
 screenData = a.innerHTML;
+}
+function updateTerminal(){
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
 }
 </script>
 </body>

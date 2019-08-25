@@ -100,8 +100,8 @@ d = b.value;
 function workB(){
 updateCommandValue();
 if(d == "help"){
-screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.";
-a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды." + e;
+a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>" + e;
+screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>";
 }
 if(d == "off"){
 b, c, d, e, screenData = " ";
@@ -110,11 +110,11 @@ a = " ";
 }
 if(d == "cs"){
 screenData = " ";
-a = e;
+a.innerHTML = e;
 }
 if(d == "ver"){
-screenData = screenData + "<br>0.0.1";
-a.innerHTML = screenData + "<br>0.0.1" + e;
+a.innerHTML = screenData + "<br>0.0.1<br>" + e;
+  screenData = screenData + "<br>0.0.1<br>";
 }
 updateCommandValue();
 }

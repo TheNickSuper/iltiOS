@@ -12,7 +12,7 @@ var a = document.getElementById("text"); //Берем тот <p> в переме
 var b, c, d, e, screenData; //Делаем переменную b, c, d, e и screenData без  значения
 setTimeout(launchA(), 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
 function launchA(){ //Вот сам launchA
-a.innerHTML = ""; //Указываем пустоту в переменную a
+a.innerHTML = " "; //Указываем пустоту в переменную a
 a.innerHTML = "iltiOS v0.0.1"; //Указываем iltiOS v0.0.1 в переменной a
 setTimeout(launchB(), 3000); // Запускаем функцию launchB через 3 секунды
 } 
@@ -61,8 +61,8 @@ a.innerHTML = a + "<br>clear screen";
 setTimeout(bootB(), 100);
 }
 function bootB(){
-screenData = "";
-a.innerHTML = "";
+screenData = " ";
+a.innerHTML = " ";
 setTimeout(workA(), 1000);
 }
 function workA(){
@@ -87,12 +87,12 @@ screenData = screenData + "<br>off - выключение компьютера, 
 a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды." + e;
 }
 if(d == "off"){
-b, c, d, e, screenData = "";
+b, c, d, e, screenData = " ";
 a.innerHTML = "Перезагрузите страницу для включения компьютера";
-a = "";
+a = " ";
 }
 if(d == "cs"){
-screenData = "";
+screenData = " ";
 a = e;
 }
 if(d == "ver"){

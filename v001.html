@@ -83,7 +83,13 @@ a.innerHTML = "";
 setTimeout(workA, 1000);
 }
 function workA(){
-updateTerminal()
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
 a.innerHTML = e;
 d = b.value;
 updateCommandValue();
@@ -94,8 +100,14 @@ d = b.value;
 function workB(){
 updateCommandValue();
 if(d == "help"){
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
 a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>" + e;
-updateTerminal()
+b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
 screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>";
 }
 else if(d == "off"){
@@ -105,12 +117,24 @@ a = " ";
 }
 else if(d == "cs"){
 screenData = " ";
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
 a.innerHTML = e;
-  updateTerminal()
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
 }
 else if(d == "ver"){
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
 a.innerHTML = screenData + "<br>0.0.1<br>" + e;
-  updateTerminal()
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
   screenData = screenData + "<br>0.0.1<br>";
 }
 updateCommandValue();
@@ -120,15 +144,6 @@ setTimeout(workB, 5000);
 }
 function jfg(){
 screenData = a.innerHTML;
-}
-function updateTerminal(){
-  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-b = document.getElementById("txtcmnd")
-c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
 }
 </script>
 </body>

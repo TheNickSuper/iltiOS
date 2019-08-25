@@ -7,7 +7,11 @@ background: black;
 color: green;
 }
 </style>
-<script>
+<title>IltiOS 0.0.1</title>
+</head>
+<body>
+<p id="text">loading...</p> <!-- Это p, который мы указали в JS выше -->
+  <script>
 var a = document.getElementById("text"); //Берем тот <p> в переменную а
 var b, c, d, e, screenData; //Делаем переменную b, c, d, e и screenData без  значения
 setTimeout(launchA(), 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
@@ -102,8 +106,5 @@ a.innerHTML = screenData + "<br>0.0.1" + e;
 updateCommandValue();
 }
 </script>
-<title>IltiOS 0.0.1</title>
-<body>
-<p id="text">loading...</p> <!-- Это p, который мы указали в JS выше -->
 </body>
 </html>

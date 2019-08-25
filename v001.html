@@ -14,59 +14,72 @@ color: green;
   <script>
 var a = document.getElementById("text"); //Берем тот <p> в переменную а
 var b, c, d, e, screenData; //Делаем переменную b, c, d, e и screenData без  значения
+screenData = null;
 setTimeout(launchA, 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
 function launchA(){ //Вот сам launchA
 a.innerHTML = " "; //Указываем пустоту в переменную a
 a.innerHTML = "iltiOS v0.0.1"; //Указываем iltiOS v0.0.1 в переменной a
+jfg()
 setTimeout(launchB, 3000); // Запускаем функцию launchB через 3 секунды
 } 
 function launchB(){ //Функция launchB
-a.innerHTML = a + "<br>1KB operating memory"; // Указываем a и <br>1KB operating memory в переменной a
+a.innerHTML = screenData + "<br>1KB operating memory"; // Указываем a и <br>1KB operating memory в переменной a
+  jfg()
 setTimeout(launchC, 3000); //Запускаем функцию launchC через 3 секунды
 } //Короче, я устал писать комментарии, поздравляю, вы нашли единственную пасхалку
 function launchC(){
-a.innerHTML = a + "<br>1MB memory";
+a.innerHTML = screenData + "<br>1MB memory";
+  jfg()
 setTimeout(launchD, 3000);
 }
 function launchD(){
-a.innerHTML = a + "<br>Letter and number test";
+a.innerHTML = screenData + "<br>Letter and number test";
+  jfg()
 setTimeout(launchE, 5000);
 }
 function launchE(){
-a.innerHTML = a + "<br>\! \@ \# \$ \% \^ \& \* \( \) \+ \" \№ \; \: \? \, \/ \- \{ \} \| \. \< \>";
+a.innerHTML = screenData + "<br>\! \@ \# \$ \% \^ \& \* \( \) \+ \" \№ \; \: \? \, \/ \- \{ \} \| \. \< \>";
+  jfg()
 setTimeout(launchF, 5000);
 }
 function launchF(){
-a.innerHTML = a + "<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
+a.innerHTML = screenData + "<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
+  jfg()
 setTimeout(launchG, 7000);
 }
 function launchG(){
-a.innerHTML = a + "<br>А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я";
+a.innerHTML = screenDara + "<br>А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я";
+  jfg()
 setTimeout(launchH, 5000);
 }
 function launchH(){
-a.innerHTML = a + "<br>a b c d e f g h i j k l m n o p q r s t u v w x y z";
+a.innerHTML = screenData + "<br>a b c d e f g h i j k l m n o p q r s t u v w x y z";
+  jfg()
 setTimeout(launchI, 7000);
 }
 function launchI(){
-a.innerHTML = a + "<br>а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я";
+a.innerHTML = screenData + "<br>а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я";
+  jfg()
 setTimeout(launchJ, 6000);
 }
 function launchJ(){
-a.innerHTML = a + "<br>1 2 3 4 5 6 7 8 9 0<br>Letter and number test finished";
+a.innerHTML = screenData + "<br>1 2 3 4 5 6 7 8 9 0<br>Letter and number test finished";
+  jfg()
 setTimeout(launchK, 3000);
 }
 function launchK(){
-a.innerHTML = a + "<br>Boot...";
+a.innerHTML = screenData + "<br>Boot...";
+  jfg()
 setTimeout(bootA, 7000);
 }
 function bootA(){
-a.innerHTML = a + "<br>clear screen";
+a.innerHTML = screenData + "<br>clear screen";
+  jfg()
 setTimeout(bootB, 100);
 }
 function bootB(){
-screenData = " ";
-a.innerHTML = " ";
+screenData = "";
+a.innerHTML = "";
 setTimeout(workA, 1000);
 }
 function workA(){
@@ -107,6 +120,9 @@ updateCommandValue();
 }
 function workC(){
 setTimeout(workB, 5000);
+}
+function jfg(){
+screenData = a.innerHTML.value;
 }
 </script>
 </body>

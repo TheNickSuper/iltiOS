@@ -14,60 +14,60 @@ color: green;
   <script>
 var a = document.getElementById("text"); //Берем тот <p> в переменную а
 var b, c, d, e, screenData; //Делаем переменную b, c, d, e и screenData без  значения
-setTimeOut(launchA(), 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
+setTimeOut(launchA, 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
 function launchA(){ //Вот сам launchA
 a.innerHTML = " "; //Указываем пустоту в переменную a
 a.innerHTML = "iltiOS v0.0.1"; //Указываем iltiOS v0.0.1 в переменной a
-setTimeOut(launchB(), 3000); // Запускаем функцию launchB через 3 секунды
+setTimeOut(launchB, 3000); // Запускаем функцию launchB через 3 секунды
 } 
 function launchB(){ //Функция launchB
 a.innerHTML = a + "<br>1KB operating memory"; // Указываем a и <br>1KB operating memory в переменной a
-setTimeOut(launchC(), 3000); //Запускаем функцию launchC через 3 секунды
+setTimeOut(launchC, 3000); //Запускаем функцию launchC через 3 секунды
 } //Короче, я устал писать комментарии, поздравляю, вы нашли единственную пасхалку
 function launchC(){
 a.innerHTML = a + "<br>1MB memory";
-setTimeOut(launchD(), 3000);
+setTimeOut(launchD, 3000);
 }
 function launchD(){
 a.innerHTML = a + "<br>Letter and number test";
-setTimeOut(launchE(), 5000);
+setTimeOut(launchE, 5000);
 }
 function launchE(){
 a.innerHTML = a + "<br>\! \@ \# \$ \% \^ \& \* \( \) \+ \" \№ \; \: \? \, \/ \- \{ \} \| \. \< \>";
-setTimeOut(launchF(), 5000);
+setTimeOut(launchF, 5000);
 }
 function launchF(){
 a.innerHTML = a + "<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
-setTimeOut(launchG(), 7000);
+setTimeOut(launchG, 7000);
 }
 function launchG(){
 a.innerHTML = a + "<br>А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я";
-setTimeOut(launchH(), 5000);
+setTimeOut(launchH, 5000);
 }
 function launchH(){
 a.innerHTML = a + "<br>a b c d e f g h i j k l m n o p q r s t u v w x y z";
-setTimeOut(launchI(), 7000);
+setTimeOut(launchI, 7000);
 }
 function launchI(){
 a.innerHTML = a + "<br>а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я";
-setTimeOut(launchJ(), 6000);
+setTimeOut(launchJ, 6000);
 }
 function launchJ(){
 a.innerHTML = a + "<br>1 2 3 4 5 6 7 8 9 0<br>Letter and number test finished";
-setTimeOut(launchK(), 3000);
+setTimeOut(launchK, 3000);
 }
 function launchK(){
 a.innerHTML = a + "<br>Boot...";
-setTimeOut(bootA(), 7000);
+setTimeOut(bootA, 7000);
 }
 function bootA(){
 a.innerHTML = a + "<br>clear screen";
-setTimeOut(bootB(), 100);
+setTimeOut(bootB, 100);
 }
 function bootB(){
 screenData = " ";
 a.innerHTML = " ";
-setTimeOut(workA(), 1000);
+setTimeOut(workA, 1000);
 }
 function workA(){
 e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
@@ -106,7 +106,7 @@ a.innerHTML = screenData + "<br>0.0.1" + e;
 updateCommandValue();
 }
 function workC(){
-setTimeOut(workB(), 5000);
+setTimeOut(workB, 5000);
 }
 </script>
 </body>

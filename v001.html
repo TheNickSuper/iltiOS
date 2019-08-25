@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background: black;
+color: green;
+}
+</style>
+<script>
+var a = document.getElementById("text"); //Берем тот <p> в переменную а
+var b, c, d, e, screenData; //Делаем переменную b, c, d, e и screenData без  значения
+setTimeout(launchA(), 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
+function launchA(){ //Вот сам launchA
+a.innerHTML = ""; //Указываем пустоту в переменную a
+a.innerHTML = "iltiOS v0.0.1"; //Указываем iltiOS v0.0.1 в переменной a
+setTimeout(launchB(), 3000); // Запускаем функцию launchB через 3 секунды
+} 
+function launchB(){ //Функция launchB
+a.innerHTML = a + "<br>1KB operating memory"; // Указываем a и <br>1KB operating memory в переменной a
+setTimeout(launchC(), 3000); //Запускаем функцию launchC через 3 секунды
+} //Короче, я устал писать комментарии, поздравляю, вы нашли единственную пасхалку
+function launchC(){
+a.innerHTML = a + "<br>1MB memory";
+setTimeout(launchD(), 3000);
+}
+function launchD(){
+a.innerHTML = a + "<br>Letter and number test";
+setTimeout(launchE(), 5000);
+}
+function launchE(){
+a.innerHTML = a + "<br>! @ # $ % ^ & * ( ) + " № ; : ? , / - { } \ | . < >";
+setTimeout(launchF(), 5000);
+}
+function launchF(){
+a.innerHTML = a + "<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
+setTimeout(launchG(), 7000);
+}
+function launchG(){
+a.innerHTML = a + "<br>А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я";
+setTimeout(launchH(), 5000);
+}
+function launchH(){
+a.innerHTML = a + "<br>a b c d e f g h i j k l m n o p q r s t u v w x y z";
+setTimeout(launchI(), 7000);
+}
+function launchI(){
+a.innerHTML = a + "<br>а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я";
+setTimeout(launchJ(), 6000);
+}
+function launchJ(){
+a.innerHTML = a + "<br>1 2 3 4 5 6 7 8 9 0<br>Letter and number test finished";
+setTimeout(launchK(), 3000);
+}
+function launchK(){
+a.innerHTML = a + "<br>Boot...";
+setTimeout(bootA(), 7000);
+}
+function bootA(){
+a.innerHTML = a + "<br>clear screen";
+setTimeout(bootB(), 100);
+}
+function bootB(){
+screenData = "";
+a.innerHTML = "";
+setTimeout(workA(), 1000);
+}
+function workA(){
+e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workB()\">Ввести</button>";
+a.innerHTML = e;
+b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
+d = b.value;
+updateCommandValue();
+}
+function updateCommandValue(){
+d = b.value;
+}
+function workB(){
+updateCommandValue();
+if(d == "help"){
+screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.";
+a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды." + e;
+}
+if(d == "off"){
+b, c, d, e, screenData = "";
+a.innerHTML = "Перезагрузите страницу для включения компьютера";
+a = "";
+}
+if(d == "cs"){
+screenData = "";
+a = e;
+}
+if(d == "ver"){
+screenData = screenData + "<br>0.0.1";
+a.innerHTML = screenData + "<br>0.0.1" + e;
+}
+updateCommandValue();
+}
+</script>
+<title>IltiOS 0.0.1</title>
+<body>
+<p id="text">loading...</p> <!-- Это p, который мы указали в JS выше -->
+</body>
+</html>

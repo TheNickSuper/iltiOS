@@ -98,17 +98,17 @@ a.innerHTML = screenData + "<br>off - выключение компьютера,
 updateTerminal()
 screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>";
 }
-if(d == "off"){
+else if(d == "off"){
 b, c, d, e, screenData = " ";
 a.innerHTML = "Перезагрузите страницу для включения компьютера";
 a = " ";
 }
-if(d == "cs"){
+else if(d == "cs"){
 screenData = " ";
 a.innerHTML = e;
   updateTerminal()
 }
-if(d == "ver"){
+else if(d == "ver"){
 a.innerHTML = screenData + "<br>0.0.1<br>" + e;
   updateTerminal()
   screenData = screenData + "<br>0.0.1<br>";

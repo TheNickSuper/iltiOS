@@ -101,14 +101,14 @@ function workB(){
 updateCommandValue();
 if(d == "help"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>" + e;
+a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы.<br>" + e;
 b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = "black";
 b.style.color = "green";
 c.style.background = "black";
 c.style.color = "green";
-screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды.<br>";
+screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы.<br>";
 }
 else if(d == "off"){
 b, c, d, e, screenData = " ";
@@ -136,6 +136,50 @@ b.style.color = "green";
 c.style.background = "black";
 c.style.color = "green";
   screenData = screenData + "<br>0.0.1<br>";
+}
+else if(d == "fm"){
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+a.innerHTML = screenData + "<br>Папки:<br>ASSEMBLY<br>system<br><br>Используйте fm (папка) чтобы посмотреть внутрь папки<br>" + e;
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
+  screenData = screenData + "<br>Папки:<br>ASSEMBLY<br>system<br><br>Используйте fm (папка) чтобы посмотреть внутрь папки<br>";
+}
+else if(d == "fm ASSEMBLY"){
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+a.innerHTML = screenData + "<br>ASSEMBLY:<br>asm.sysf<br>" + e;
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
+  screenData = screenData + "<br>ASSEMBLY:<br>asm.sysf<br>" + e;
+}
+else if(d == "fm system"){
+   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+a.innerHTML = screenData + "<br>system:<br>launch.excf<br>boot.excf<br>command.cmd<br>saveScreenData.excf<br>system.asm<br>" + e;
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
+  screenData = screenData + "<br>system:<br>launch.excf<br>boot.excf<br>command.cmd<br>saveScreenData.excf<br>system.asm<br>";
+}
+else {
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+a.innerHTML = screenData + "<br>Извините, была указана неверная команда или неверный атрибут<br>" + e;
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = "black";
+b.style.color = "green";
+c.style.background = "black";
+c.style.color = "green";
+  screenData = screenData + "<br>Извините, была указана неверная команда<br>";
 }
 updateCommandValue();
 }

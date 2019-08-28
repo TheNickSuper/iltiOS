@@ -84,13 +84,13 @@ setTimeout(workA, 1000);
 }
 function workA(){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+  a.innerHTML = e;
 b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = "black";
 b.style.color = "green";
 c.style.background = "black";
 c.style.color = "green";
-a.innerHTML = e;
 d = b.value;
 updateCommandValue();
 }

@@ -13,8 +13,10 @@ color: green;
 <p id="text">loading...</p> <!-- Это p, который мы указали в JS выше -->
   <script>
 var a = document.getElementById("text"); //Берем тот <p> в переменную а
-var b, c, d, e, screenData; //Делаем переменную b, c, d, e и screenData без  значения
+var b, c, d, e, screenData, colorText, colorBackground; //Делаем переменную b, c, d, e, screenData, colorText и colorBackground без  значения
 screenData = null;
+    colorText = "green";
+    colorBackground = "black";
 setTimeout(launchA, 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
 function launchA(){ //Вот сам launchA
 a.innerHTML = " "; //Указываем пустоту в переменную a
@@ -73,7 +75,7 @@ a.innerHTML = screenData + "<br>Boot...";
 setTimeout(bootA, 7000);
 }
 function bootA(){
-a.innerHTML = screenData + "<br>clear screen";
+a.innerHTML = screenData + "<br>cs";
   jfg()
 setTimeout(bootB, 100);
 }
@@ -87,10 +89,12 @@ function workA(){
   a.innerHTML = e;
 b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
 d = b.value;
 updateCommandValue();
 }
@@ -101,14 +105,16 @@ function workB(){
 updateCommandValue();
 if(d == "help"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы.<br>" + e;
+a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы, color (цвет) - поменять цвет и color help для помощи для color.<br>" + e;
 b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
-screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы.<br>";
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
+screenData = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы, color (цвет) - поменять цвет и color help для помощи для color.<br>";
 }
 else if(d == "off"){
 b, c, d, e, screenData = " ";
@@ -116,25 +122,19 @@ a.innerHTML = "Перезагрузите страницу для включен
 a = " ";
 }
 else if(d == "cs"){
-screenData = " ";
-  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = e;
-  b = document.getElementById("txtcmnd")
-c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
+cs()
 }
 else if(d == "ver"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
 a.innerHTML = screenData + "<br>0.0.1<br>" + e;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
   screenData = screenData + "<br>0.0.1<br>";
 }
 else if(d == "fm"){
@@ -142,10 +142,12 @@ else if(d == "fm"){
 a.innerHTML = screenData + "<br>Папки:<br>ASSEMBLY<br>system<br><br>Используйте fm (папка) чтобы посмотреть внутрь папки<br>" + e;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
   screenData = screenData + "<br>Папки:<br>ASSEMBLY<br>system<br><br>Используйте fm (папка) чтобы посмотреть внутрь папки<br>";
 }
 else if(d == "fm ASSEMBLY"){
@@ -153,10 +155,12 @@ else if(d == "fm ASSEMBLY"){
 a.innerHTML = screenData + "<br>ASSEMBLY:<br>asm.sysf<br>" + e;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
   screenData = screenData + "<br>ASSEMBLY:<br>asm.sysf<br>" + e;
 }
 else if(d == "fm system"){
@@ -164,22 +168,63 @@ else if(d == "fm system"){
 a.innerHTML = screenData + "<br>system:<br>launch.excf<br>boot.excf<br>command.cmd<br>saveScreenData.excf<br>system.asm<br>" + e;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
   screenData = screenData + "<br>system:<br>launch.excf<br>boot.excf<br>command.cmd<br>saveScreenData.excf<br>system.asm<br>";
+}
+else if(d == "color help"){
+e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+a.innerHTML = screenData + "<br>default - как обычно, 0 - зеленый, 1 - черный, 2 - белый, 3 - лаймовый. Укажите color (цвет фона)(цвет текста), например color 10 для зеленого текста на черном фоне<br>" + e;
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
+  screenData = screenData + "<br>default - как обычно, 0 - зеленый, 1 - черный, 2 - белый, 3 - лаймовый. Укажите color (цвет фона)(цвет текста), например color 10 для зеленого текста на черном фоне<br>";
+}
+else if(d == "color default"){
+  colorText = "green";
+  colorBackground = "black";
+  cs()
+}
+else if(d == "color 00"){
+colorText = "green";
+  colorBackground = "green";
+  cs()
+}
+  else if(d == "color 01"){
+ colorText = "black";
+    colorBackground = "green";
+    cs()
+  }
+else if(d == "color 02"){
+  colorText = "white";
+  colorBackground = "green";
+  cs()
+}
+else if(d == "color 03"){
+  colorText = "lime";
+  colorBackground = "green";
 }
 else {
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
 a.innerHTML = screenData + "<br>Извините, была указана неверная команда или неверный атрибут<br>" + e;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
-b.style.background = "black";
-b.style.color = "green";
-c.style.background = "black";
-c.style.color = "green";
-  screenData = screenData + "<br>Извините, была указана неверная команда<br>";
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+body.style.background = colorBackground;
+body.style.color = colorText;
+  screenData = screenData + "<br>Извините, была указана неверная команда или неверный атрибут<br>";
 }
 updateCommandValue();
 }
@@ -189,6 +234,19 @@ setTimeout(workB, 5000);
 function jfg(){
 screenData = a.innerHTML;
 }
+    function cs(){
+      screenData = " ";
+  e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
+a.innerHTML = e;
+  b = document.getElementById("txtcmnd")
+c = document.getElementById("run")
+b.style.background = colorBackground;
+b.style.color = colorText;
+c.style.background = colorBackground;
+c.style.color = colorText;
+  body.style.background = colorBackground;
+body.style.color = colorText;
+    }
 </script>
 </body>
 </html>

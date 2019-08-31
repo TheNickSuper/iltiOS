@@ -13,8 +13,9 @@ color: green;
 <p id="text">loading...</p> <!-- Это p, который мы указали в JS выше -->
   <script>
 var a = document.getElementById("text"); //Берем тот <p> в переменную а
-var b, c, d, e, screenData, colorText, colorBackground; //Делаем переменную b, c, d, e, screenData, colorText и colorBackground без  значения
-screenData = null;
+var b, c, d, e, screenData, colorText, colorBackground;//Делаем переменную b, c, d, e, screenData, colorText и colorBackground без  значения
+var body = document.getElementByTag("body");
+    screenData = null;
     colorText = "green";
     colorBackground = "black";
 setTimeout(launchA, 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA

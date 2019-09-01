@@ -22,7 +22,7 @@ var body = document.getElementsByTagName("body")[0];
 setTimeout(launchA, 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
 function launchA(){ //Вот сам launchA
 a.innerHTML = " "; //Указываем пустоту в переменную a
-a.innerHTML = "iltiOS v0.0.1"; //Указываем iltiOS v0.0.1 в переменной a
+a.innerHTML = "iltiOS v0.0.2"; //Указываем iltiOS v0.0.2 в переменной a
 jfg()
 setTimeout(launchB, 3000); // Запускаем функцию launchB через 3 секунды
 } 
@@ -91,7 +91,7 @@ function workA(){
   chatB = document.getElementById("chatA");
   jl = "<button onclick=\"jlgOpen()\"><p id=\"jlg\"></p>"
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-  a.innerHTML = e + chat;
+  a.innerHTML = e + chat + jl;
   colorBackground = "black";
   colorText = "green";
 b = document.getElementById("txtcmnd")
@@ -113,7 +113,7 @@ function workB(){
 updateCommandValue();
 if(d == "help"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы, color (цвет) - поменять цвет и color help для помощи для color.<br>" + e + chat;
+a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы, color (цвет) - поменять цвет и color help для помощи для color.<br>" + e + chat + jl;
 b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -135,7 +135,7 @@ cs()
 }
 else if(d == "ver"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>0.0.1<br>" + e + chat;
+a.innerHTML = screenData + "<br>0.0.2<br>" + e + chat + jl;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -145,11 +145,11 @@ c.style.color = colorText;
   body.style.background = colorBackground;
 body.style.color = colorText;
   chatB.style.color = colorText;
-  screenData = screenData + "<br>0.0.1<br>";
+  screenData = screenData + "<br>0.0.2<br>";
 }
 else if(d == "fm"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>Папки:<br>ASSEMBLY<br>system<br><br>Используйте fm (папка) чтобы посмотреть внутрь папки<br>" + e + chat;
+a.innerHTML = screenData + "<br>Папки:<br>ASSEMBLY<br>system<br><br>Используйте fm (папка) чтобы посмотреть внутрь папки<br>" + e + chat + jl;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -163,7 +163,7 @@ body.style.color = colorText;
 }
 else if(d == "fm ASSEMBLY"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>ASSEMBLY:<br>asm.sysf<br>" + e + chat;
+a.innerHTML = screenData + "<br>ASSEMBLY:<br>asm.sysf<br>" + e + chat + jl;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -190,7 +190,7 @@ body.style.color = colorText;
 }
 else if(d == "color help"){
 e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>default - как обычно, 0 - зеленый, 1 - черный, 2 - белый, 3 - лаймовый. Укажите color (цвет фона)(цвет текста), например color 10 для зеленого текста на черном фоне<br>" + e + chat;
+a.innerHTML = screenData + "<br>default - как обычно, 0 - зеленый, 1 - черный, 2 - белый, 3 - лаймовый. Укажите color (цвет фона)(цвет текста), например color 10 для зеленого текста на черном фоне<br>" + e + chat + jl;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;

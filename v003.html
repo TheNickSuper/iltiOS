@@ -18,57 +18,58 @@ var b, c, d, e, screenData, colorText, colorBackground;//Делаем перем
     colorText = "green";
     colorBackground = "black";
 var body = document.getElementsByTagName("body")[0];
-    var chat, jl, jhg, jgh = false;
-setTimeout(launchA, 8000); // Дадим прогрузиться за 8 секунд, а после запускаем launchA
+    var chat, jl, jhg, jlg, jgh = false;
+setTimeout(launchA, 4000); // Дадим прогрузиться за 6 секунд, а после запускаем launchA
 function launchA(){ //Вот сам launchA
 a.innerHTML = " "; //Указываем пустоту в переменную a
 a.innerHTML = "iltiOS v0.0.3"; //Указываем iltiOS v0.0.3 в переменной a
 jfg()
-setTimeout(launchB, 3000); // Запускаем функцию launchB через 3 секунды
+setTimeout(launchB, 2000); // Запускаем функцию launchB через 3 секунды
 } 
 function launchB(){ //Функция launchB
-a.innerHTML = screenData + "<br>1KB operating memory"; // Указываем a и <br>1KB operating memory в переменной a
+a.innerHTML = screenData + "<br>10MB operating memory"; // Указываем a и <br>1KB operating memory в переменной a
   jfg()
-setTimeout(launchC, 3000); //Запускаем функцию launchC через 3 секунды
+setTimeout(launchC, 2000); //Запускаем функцию launchC через 3 секунды
 } //Короче, я устал писать комментарии, поздравляю, вы нашли единственную пасхалку
 function launchC(){
 a.innerHTML = screenData + "<br>100MB memory";
   jfg()
-setTimeout(launchD, 3000);
+setTimeout(launchD, 2000);
 }
 function launchD(){
 a.innerHTML = screenData + "<br>Letter and number test";
   jfg()
-setTimeout(launchE, 5000);
+setTimeout(launchE, 2000);
 }
 function launchE(){
 a.innerHTML = screenData + "<br>\! \@ \# \$ \% \^ \& \* \( \) \+ \" \№ \; \: \? \, \/ \- \{ \} \| \. \< \>";
   jfg()
-setTimeout(launchJ, 5000);
+setTimeout(launchJ, 3000);
 }
 function launchJ(){
 a.innerHTML = screenData + "<br>1 2 3 4 5 6 7 8 9 0<br>Letter and number test finished";
   jfg()
-setTimeout(launchK, 3000);
+setTimeout(launchK, 2000);
 }
 function launchK(){
 a.innerHTML = screenData + "<br>Boot...";
   jfg()
-setTimeout(bootA, 7000);
+setTimeout(bootA, 4000);
 }
 function bootA(){
 a.innerHTML = screenData + "<br>clear screen";
   jfg()
-setTimeout(bootB, 100);
+setTimeout(bootB, 50);
 }
 function bootB(){
 screenData = "";
 a.innerHTML = "";
-setTimeout(workA, 1000);
+setTimeout(workA, 900);
 }
 function workA(){
+  jlg = "<p></p>"
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-  a.innerHTML = e 
+  a.innerHTML = e + jlg
   colorBackground = "black";
   colorText = "green";
 b = document.getElementById("txtcmnd")
@@ -90,7 +91,7 @@ function workB(){
 updateCommandValue();
 if(d == "help"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы, color (цвет) - поменять цвет и color help для помощи для color.<br>" + e;
+a.innerHTML = screenData + "<br>off - выключение компьютера, cs - очистка экрана, ver - посмотреть версию, help - посмотреть все команды, fm - посмотреть все файлы, color (цвет) - поменять цвет и color help для помощи для color.<br>" + e + jlg;
 b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -112,7 +113,7 @@ cs()
 }
 else if(d == "ver"){
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>0.0.3<br>" + e;
+a.innerHTML = screenData + "<br>0.0.3<br>" + e + jlg;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -126,7 +127,7 @@ body.style.color = colorText;
 }
 else if(d == "color help"){
 e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>default - как обычно, 0 - зеленый, 1 - черный, 2 - белый, 3 - лаймовый. Укажите color (цвет фона)(цвет текста), например color 10 для зеленого текста на черном фоне<br>" + e;
+a.innerHTML = screenData + "<br>default - как обычно, 0 - зеленый, 1 - черный, 2 - белый, 3 - лаймовый. Укажите color (цвет фона)(цвет текста), например color 10 для зеленого текста на черном фоне<br>" + e + jlg;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -223,9 +224,12 @@ else if(d == "color 21"){
   colorBackground = "lime";
   cs()
 }
+  else if(d == "regInfo"){
+      jlgOpen()
+  }
 else {
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = screenData + "<br>Извините, была указана неверная команда или неверный атрибут<br>" + e + chat;
+a.innerHTML = screenData + "<br>Извините, была указана неверная команда или неверный атрибут<br>" + e + jlg;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -248,7 +252,7 @@ screenData = a.innerHTML;
     function cs(){
       screenData = " ";
   e = "Комманда:<textarea id=\"txtcmnd\"></textarea><button id=\"run\" onclick=\"workC()\">Ввести</button>";
-a.innerHTML = e + chat;
+a.innerHTML = e + jlg;
   b = document.getElementById("txtcmnd")
 c = document.getElementById("run")
 b.style.background = colorBackground;
@@ -260,9 +264,8 @@ body.style.color = colorText;
       chatB.style.color = colorText;
     }
     function jlgOpen(){
-      jhg = document.getElementById("jlg");
       if(jgh == false){
-        jlg.innerHTML = "Чтобы зарегистироваться напишите на почту pwaramef@mail.ru письмо с \"Логин: (ваш логин) Пароль: (ваш пароль)\", а для написания/удаления письма в чате напишите на почту pwaramef@mail.ru письмо с нужным письмом в чат";
+        jlg.innerHTML = "Чтобы зарегистироваться напишите в вк HTTPS://vk.com/nairuigames письмо с \"Логин: (ваш логин) Пароль: (ваш пароль)\" для регистрации";
         jgh = true;
       }
       if(jgh == true){
